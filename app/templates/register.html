@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block title %}
+<title>Register Page</title>
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="container text-center">
+        <form method="POST" class="form-register bg-dark mt-5 " style="color:white;">
+            <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1654585555653/b4pafSL1j.png" class="mb-4" width="200px" height="200px"/>
+            {{ register_form.hidden_tag() }}
+            <br>
+            <h2 class="h3 mb-3 font-weight-normal">Please create your Account</h2>
+            <br>
+            {{register_form.username.label()}}
+            {{register_form.username(class='form-control', placeholder='Enter username')}}
+
+            {{register_form.email.label()}}
+            {{register_form.email(class='form-control', placeholder='Enter email address')}}
+
+            {{register_form.password.label()}}
+            {{register_form.password(class='form-control', placeholder='Enter password')}}
+
+            {{register_form.confirm_password.label()}}
+            {{register_form.confirm_password(class='form-control', placeholder='Confirm password')}}
+            <br>
+            {{ register_form.submit_button(class='btn btn-lg btn-secondary btn-block') }}
+        </form>
+    </div>
+</body>
+{% endblock %}
